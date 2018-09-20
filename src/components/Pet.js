@@ -1,35 +1,22 @@
 import React from 'react'
 
-class Pet extends React.Component {
-
-  handleClick = (event) => {
-    this.props.onAdoptPet(event.target.dataset.id)
+const renderGender = (pet) => {
+  if (pet.gender === "male") {
+    return "♂"
+  } else {
+    return "♀"
   }
+}
 
-  // renderButton = () => {
-  //   if (this.props.pet.isAdpoted) {
-  //     return <button className="ui disabled button">Already adopted</button>
-  //   } else {
-  //     return <button onClick={this.handleClick} className="ui primary button" data-id={this.props.pet.id}>Adopt pet</button>
-  //   }
-  // }
+const Pet = (props) => {
+    const onAdoptPet = props.onAdoptPet
+    const {age, name, weight, type, id} = props.pet
 
-  renderGender = () => {
-    if (this.props.pet.gender === "male") {
-      return "♂"
-    } else {
-      return "♀"
-    }
-  }
-  render() {
-    const onAdoptPet = this.props.onAdoptPet
-
-    const {age, name, weight, type, id} = this.props.pet
     return (
       <div className="card">
         <div className="content">
           <a className="header">
-            {this.renderGender()}
+            {renderGender(props.pet)}
             {name}
           </a>
           <div className="meta">
@@ -41,12 +28,11 @@ class Pet extends React.Component {
           </div>
         </div>
         <div className="extra content">
-          {/* {this.renderButton()} */}
-          {this.props.pet.isAdopted ? <button className="ui disabled button">Already adopted</button> : <button onClick={ () => onAdoptPet(id)} className="ui primary button" data-id={this.props.pet.id}>Adopt pet</button> }
+          {props.pet.isAdopted ? <button className="ui disabled button">Already adopted</button> : <button onClick={ () => onAdoptPet(id)} className="ui primary button" data-id={props.pet.id}>Adopt pet</button> }
         </div>
       </div>
     )
-  }
+  
 }
 
 export default Pet
