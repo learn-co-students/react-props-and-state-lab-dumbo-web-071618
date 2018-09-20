@@ -1,12 +1,16 @@
 import React from 'react'
-
 class Filters extends React.Component {
+
+
+
+
   render() {
     return (
       <div className="ui form">
         <h3>Animal type</h3>
         <div className="field">
-          <select name="type" id="type">
+          //added event listender to select menu that fires the onChangeType that was defined in App
+          <select onChange={this.props.onChangeType} name="type" id="type">
             <option value="all">All</option>
             <option value="cat">Cats</option>
             <option value="dog">Dogs</option>
@@ -15,7 +19,10 @@ class Filters extends React.Component {
         </div>
 
         <div className="field">
-          <button className="ui secondary button">Find pets</button>
+          //added event listender to button that fires the onFindPetsClick that was defined in App
+          <button onClick={this.props.onFindPetsClick}
+            className="ui secondary button">Find pets
+          </button>
         </div>
       </div>
     )

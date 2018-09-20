@@ -4,7 +4,15 @@ import Pet from './Pet'
 
 class PetBrowser extends React.Component {
   render() {
-    return <div className="ui cards">PET COMPONENT SHOULD GO HERE</div>
+    //mapped over the array of pets we got from the App (fetch request, which was added to the pets array). we passed in the state as a prop value here. at each iteration, it returns a Pet component that has a pet object as a prop
+    let singlePet = this.props.pets.map((pet)=> {
+      return <Pet pet={pet}/>
+    })
+
+    return <div className="ui cards">
+      //we passed in the return value of the map 
+      {singlePet}
+    </div>
   }
 }
 
