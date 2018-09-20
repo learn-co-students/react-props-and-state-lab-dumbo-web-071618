@@ -23,20 +23,21 @@ class Pet extends React.Component {
   }
   render() {
     const onAdoptPet = this.props.onAdoptPet
-    let id = this.props.pet.id
+
+    const {age, name, weight, type, id} = this.props.pet
     return (
       <div className="card">
         <div className="content">
           <a className="header">
             {this.renderGender()}
-            {this.props.pet.name}
+            {name}
           </a>
           <div className="meta">
-            <span className="date">{this.props.pet.type}</span>
+            <span className="date">{type}</span>
           </div>
           <div className="description">
-            <p>Age: {this.props.pet.age}</p>
-            <p>Weight: {this.props.pet.weight}</p>
+            <p>Age: {age}</p>
+            <p>Weight: {weight}</p>
           </div>
         </div>
         <div className="extra content">
