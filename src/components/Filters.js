@@ -9,7 +9,7 @@ class Filters extends React.Component {
       <div className="ui form">
         <h3>Animal type</h3>
         <div className="field">
-          //added event listender to select menu that fires the onChangeType that was defined in App
+          {/*added event listender to select menu that fires the onChangeType that was defined in App*/}
           <select onChange={this.props.onChangeType} name="type" id="type">
             <option value="all">All</option>
             <option value="cat">Cats</option>
@@ -19,7 +19,7 @@ class Filters extends React.Component {
         </div>
 
         <div className="field">
-          //added event listender to button that fires the onFindPetsClick that was defined in App
+          {/*added event listender to button that fires the onFindPetsClick that was defined in App*/}
           <button onClick={this.props.onFindPetsClick}
             className="ui secondary button">Find pets
           </button>

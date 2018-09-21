@@ -44,7 +44,8 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.pets); //we consoled log here because we can use vanilla JS here. same area if we want to map, etc.
+    console.log(this.state.pets);
+    {/*we consoled log here because we can use vanilla JS here. same area if we want to map, etc.*/}
     return (
       <div className="ui container">
         <header>
@@ -53,13 +54,13 @@ class App extends React.Component {
         <div className="ui container">
           <div className="ui grid">
             <div className="four wide column">
-              //passed props to both Filters and PetBrowser component
+              {/*passed props to both Filters and PetBrowser component*/}
               <Filters
                 onChangeType={this.handleChange}
                 onFindPetsClick={this.handlePetsClick}/>
             </div>
             <div className="twelve wide column">
-              //passing in the objects in the array "pets"
+              {/*passing in the objects in the array "pets"*/}
               <PetBrowser pets={this.state.pets}/>
             </div>
           </div>

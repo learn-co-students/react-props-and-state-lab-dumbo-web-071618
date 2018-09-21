@@ -32,12 +32,13 @@ class Pet extends React.Component {
   }
 
   render() {
-    // console.log(this.props.pet.isAdopted)
+    {/*console.log(this.props.pet.isAdopted)*/}
     return (
       <div className="card">
         <div className="content">
           <a className="header">
-            {this.petGender()} //invoking the petGender function which then passes in the return value (gender symbol) to be rendered on the DOM
+            {this.petGender()}
+            {/*invoking the petGender function which then passes in the return value (gender symbol) to be rendered on the DOM*/}
 
             Pet Name: {this.props.pet.name}
           </a>
@@ -50,8 +51,10 @@ class Pet extends React.Component {
           </div>
         </div>
         <div className="extra content">
-          <button className="ui disabled button" hidden={this.state.adopted ? false : true}>Already adopted</button> //based on the updated state value of the "adopted" key, the ternerary evaluates the expression and either hides or reveals the "Already Adopted button"
-          <button className="ui primary button" onClick={this.adopt}>Adopt pet</button> //adding event listener which fires the adopt function
+          <button className="ui disabled button" hidden={this.state.adopted ? false : true}>Already adopted</button>
+          {/* based on the updated state value of the "adopted" key, the ternerary evaluates the expression and either hides or reveals the "Already Adopted button" */}
+          <button className="ui primary button" onClick={this.adopt}>Adopt pet</button>
+          {/*adding event listener which fires the adopt function*/}
         </div>
       </div>
     )
